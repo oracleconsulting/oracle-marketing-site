@@ -1,8 +1,9 @@
+use client
 
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Clock, Target, Users, BarChart3, Zap, CheckCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const HowItWorks = () => {
   const { scrollY } = useScroll();

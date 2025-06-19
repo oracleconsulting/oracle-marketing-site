@@ -1,3 +1,4 @@
+use client
 import type { Metadata } from 'next'
 import { motion } from 'framer-motion'
 import { FaAward, FaCalendar, FaClock, FaArrowRight } from 'react-icons/fa'

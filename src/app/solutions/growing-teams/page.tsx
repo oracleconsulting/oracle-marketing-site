@@ -1,14 +1,15 @@
+use client
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Brain } from 'lucide-react';
-import { FoundersHero } from '@/components/founders/FoundersHero';
-import { ProblemSection } from '@/components/founders/ProblemSection';
-import { SolutionFeatures } from '@/components/founders/SolutionFeatures';
-import { ROISection } from '@/components/founders/ROISection';
-import { SuccessStory } from '@/components/founders/SuccessStory';
-import { CallToAction } from '@/components/founders/CallToAction';
+import { TeamsHero } from '@/components/teams/TeamsHero';
+import { ChallengeSection } from '@/components/teams/ChallengeSection';
+import { SolutionFeatures } from '@/components/teams/SolutionFeatures';
+import { ROISection } from '@/components/teams/ROISection';
+import { SuccessStory } from '@/components/teams/SuccessStory';
+import { CallToAction } from '@/components/teams/CallToAction';
 
-const ExhaustedFounders = () => {
+const GrowingTeams = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   // Navigation items
@@ -104,10 +105,10 @@ const ExhaustedFounders = () => {
         </AnimatePresence>
       </motion.nav>
 
-      <div className="min-h-screen bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 pt-24">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 pt-24">
         <div className="max-w-7xl mx-auto px-6">
-          <FoundersHero />
-          <ProblemSection />
+          <TeamsHero />
+          <ChallengeSection />
           <SolutionFeatures />
           <ROISection />
           <SuccessStory />
@@ -118,4 +119,4 @@ const ExhaustedFounders = () => {
   );
 };
 
-export default ExhaustedFounders;
+export default GrowingTeams;

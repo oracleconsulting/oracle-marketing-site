@@ -1,8 +1,9 @@
+use client
 
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, PieChart, Briefcase, Target, Shield, Brain, Users, Scale, Lightbulb, Filter } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const MeetTheBoard = () => {
   const advisors = [

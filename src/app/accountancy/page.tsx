@@ -1,6 +1,9 @@
+use client
+'use client'
+
 import React from 'react';
-import { FaStar, FaBullseye, FaUsers, FaBookOpen, FaShieldAlt, FaArrowRight, FaCheckCircle, FaChartLine } from 'react-icons/fa';
 import Link from 'next/link';
+import { FaStar, FaBullseye, FaUsers, FaBookOpen, FaShieldAlt, FaArrowRight, FaCheckCircle, FaChartLine } from 'react-icons/fa';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -10,8 +13,8 @@ export const metadata: Metadata = {
 };
 
 // Constants for external URLs
-const DASHBOARD_URL = 'https://oracle-method-portal-production.up.railway.app/accountancy/dashboard';
-const AUTH_URL = 'https://oracle-method-portal-production.up.railway.app/accountancy/auth'; // Direct link to auth page
+const DASHBOARD_URL = process.env.NEXT_PUBLIC_DASHBOARD_URL || 'https://oracle-method-portal-production.up.railway.app/accountancy/dashboard';
+const AUTH_URL = process.env.NEXT_PUBLIC_AUTH_URL || 'https://oracle-method-portal-production.up.railway.app/accountancy/auth'; // Direct link to auth page
 
 export default function AccountancyLandingPage() {
   return (
@@ -30,22 +33,18 @@ export default function AccountancyLandingPage() {
           </div>
           <div className="flex items-center gap-6">
             <Link href="/" className="text-purple-200 hover:text-yellow-400 transition-colors">Main Portal</Link>
-            <a
-              href={DASHBOARD_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/accountancy/dashboard"
               className="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-semibold hover:from-purple-700 hover:to-purple-800 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Go to Dashboard
-            </a>
-            <a
-              href={AUTH_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            </Link>
+            <Link
+              href="/accountancy/auth"
               className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-full font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Take Free Assessment
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -68,14 +67,12 @@ export default function AccountancyLandingPage() {
               Streamline operations, enhance client relationships, and drive growth with our comprehensive suite of AI-powered tools designed specifically for modern accountancy practices.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-              <a
-                href={AUTH_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/accountancy/auth"
                 className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-xl font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 Start Your Free Assessment <FaArrowRight className="w-5 h-5" />
-              </a>
+              </Link>
               <a
                 href="#demo"
                 className="px-8 py-4 border-2 border-purple-400 text-purple-400 rounded-xl font-semibold hover:bg-purple-400 hover:text-slate-900 transition-all duration-300"
@@ -145,7 +142,6 @@ export default function AccountancyLandingPage() {
                 Comprehensive security evaluation and recommendations to protect your practice and client data.
               </p>
             </div>
-            {/* Add more features as needed */}
           </div>
         </div>
       </div>

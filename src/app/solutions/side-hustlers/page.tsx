@@ -1,7 +1,8 @@
+use client
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, Target, TrendingUp, Zap, DollarSign, ArrowRight, CheckCircle, Calendar, BarChart3, Menu, X, Brain } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const SideHustlers = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

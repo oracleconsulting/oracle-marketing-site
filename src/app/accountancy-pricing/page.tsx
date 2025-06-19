@@ -1,3 +1,4 @@
+use client
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Calculator, TrendingUp, Clock, Shield, Users } from 'lucide-react';
