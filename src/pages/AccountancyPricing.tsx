@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Calculator, TrendingUp, Clock, Shield, Users } from 'lucide-react';
@@ -134,7 +133,7 @@ const AccountancyPricing = () => {
     <div className="min-h-screen bg-black pt-20">
       {/* Background Effects */}
       <div className="fixed inset-0 bg-gradient-to-br from-amber-900/20 via-transparent to-yellow-900/20 opacity-50" />
-      <div className="fixed inset-0 bg-[url('/hex-pattern.svg')] opacity-[0.02]" />
+      <div className="fixed inset-0 bg-gradient-to-br from-gray-100 to-gray-200 opacity-[0.02]" />
       
       <div className="relative z-10 container-mobile py-8 md:py-16">
         {/* Header */}

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, Zap, Users, Target, Crown, Sparkles } from 'lucide-react';
@@ -111,7 +110,7 @@ const PricingPage = () => {
     <div className="min-h-screen bg-black pt-20 md:pt-24">
       {/* Background Effects */}
       <div className="fixed inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20" />
-      <div className="fixed inset-0 bg-[url('/hex-pattern.svg')] opacity-[0.02]" />
+      <div className="fixed inset-0 bg-gradient-to-br from-gray-100 to-gray-200 opacity-[0.02]" />
       
       <div className="relative z-10 container-mobile py-8 md:py-16">
         {/* Header */}
