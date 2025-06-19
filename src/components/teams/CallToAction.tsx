@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export const CallToAction = () => {
   return (
@@ -21,7 +20,7 @@ export const CallToAction = () => {
       </p>
 
       <Link
-        to="/auth"
+        href="/auth"
         className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all text-lg"
       >
         Start Team Assessment

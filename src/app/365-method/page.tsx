@@ -1,13 +1,8 @@
-use client
+'use client'
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Brain, Calendar, Target, Clock, ArrowRight, CheckCircle,
-  Activity, Sparkles, TrendingUp, Users, BarChart3,
-  FileText, Mountain, Compass, Map, Rocket, Trophy,
-  Heart, Coffee, Sun, Moon, Star, Zap, Gift,
-  ChevronRight, Download, Play, Pause, RefreshCw,
-  PenTool, Lightbulb, Layers, Grid, BookOpen
+  Calendar, Target, Clock, CheckCircle, FileText, Mountain, Compass, Rocket, Heart, Coffee, Sun, Moon, Star, Download, Play, Pause, Layers
 } from 'lucide-react';
 
 const Method365Page = () => {
@@ -506,7 +501,7 @@ const Method365Page = () => {
                         <p className="text-sm text-gray-700">Gentle reminders</p>
                       </div>
                       <div className="bg-white/80 rounded-xl p-4 text-center">
-                        <BarChart3 className="w-8 h-8 text-orange-600 mx-auto mb-2" />
+                        <div className="w-8 h-8 bg-orange-600 mx-auto mb-2 rounded">📊</div>
                         <p className="text-sm text-gray-700">Track progress</p>
                       </div>
                     </div>
@@ -778,12 +773,16 @@ const Method365Page = () => {
 };
 
 // Fix for dynamic className issue
-const X = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-</svg>;
+const X = ({ className = "" }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+  </svg>
+);
 
-const Bell = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-</svg>;
+const Bell = ({ className = "" }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+  </svg>
+);
 
 export default Method365Page;

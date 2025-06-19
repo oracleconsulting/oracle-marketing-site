@@ -1,16 +1,9 @@
-use client
-import type { Metadata } from 'next'
+'use client'
 import { motion } from 'framer-motion'
 import { FaAward, FaCalendar, FaClock, FaArrowRight } from 'react-icons/fa'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
-
-export const metadata: Metadata = {
-  title: 'Blog - Oracle AI',
-  description: 'Insights, strategies, and stories from UK founders who are building life-first businesses.',
-  keywords: 'business blog, founder insights, life-first business, oracle ai blog',
-}
 
 export default function BlogPage() {
   const blogPosts = [

@@ -1,4 +1,4 @@
-use client
+'use client'
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Calculator, TrendingUp, Clock, Shield, Users } from 'lucide-react';
@@ -162,7 +162,7 @@ const AccountancyPricing = () => {
           transition={{ delay: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-24 max-w-7xl mx-auto"
         >
-          {pricingTiers.map((tier, index) => (
+          {pricingTiers.map((tier) => (
             <motion.div
               key={tier.name}
               className={`relative card-mobile ${tier.popular ? 'border-2 border-amber-500' : ''}`}

@@ -1,4 +1,4 @@
-use client
+'use client'
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Brain, Users, MessageSquare, Calendar, Hash, Lock, ExternalLink, TrendingUp } from 'lucide-react';

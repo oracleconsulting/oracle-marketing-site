@@ -1,34 +1,20 @@
-use client
+'use client'
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Brain, 
+import {
+  Brain,
   Users, 
   MessageSquare, 
-  Shield, 
   Target, 
-  Clock, 
-  CheckCircle,
-  ArrowRight, 
-  Star, 
-  Trophy, 
-  Rocket,
-  Building2, 
-  Settings, 
-  Heart, 
-  Sparkles,
   PlayCircle, 
-  Quote, 
   AlertCircle,
   Send
 } from 'lucide-react';
 
 const AIBoardPage = () => {
   const [selectedAdvisor, setSelectedAdvisor] = useState<any>(null);
-  const [activeTab, setActiveTab] = useState('overview');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [chatMessage, setChatMessage] = useState('');
-  const [boardMood, setBoardMood] = useState('collaborative');
   
   const handleMouseMove = (e: React.MouseEvent) => {
     setMousePosition({ x: e.clientX, y: e.clientY });
@@ -280,7 +266,7 @@ const AIBoardPage = () => {
       
       {/* Floating board member avatars */}
       <div className="fixed inset-0 pointer-events-none">
-        {boardMembers.slice(0, 5).map((member, i) => (
+        {boardMembers.slice(0, 5).map((member) => (
           <motion.div
             key={member.id}
             className="absolute text-2xl"
@@ -688,8 +674,8 @@ const AIBoardPage = () => {
 };
 
 // Custom X icon component
-const X = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+const X = ({ className = "" }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
   </svg>
 );

@@ -1,20 +1,8 @@
-use client
 'use client'
 
 import React from 'react';
 import Link from 'next/link';
 import { FaStar, FaBullseye, FaUsers, FaBookOpen, FaShieldAlt, FaArrowRight, FaCheckCircle, FaChartLine } from 'react-icons/fa';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Accountancy Portal - Oracle AI',
-  description: 'Transform your accountancy practice with AI-powered tools, client handover, compliance, and more. Join the future of accountancy today.',
-  keywords: 'accountancy, ai, oracle ai, accountancy automation, client portal, insights',
-};
-
-// Constants for external URLs
-const DASHBOARD_URL = process.env.NEXT_PUBLIC_DASHBOARD_URL || 'https://oracle-method-portal-production.up.railway.app/accountancy/dashboard';
-const AUTH_URL = process.env.NEXT_PUBLIC_AUTH_URL || 'https://oracle-method-portal-production.up.railway.app/accountancy/auth'; // Direct link to auth page
 
 export default function AccountancyLandingPage() {
   return (
