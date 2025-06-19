@@ -6,8 +6,12 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Accountancy Portal - Oracle AI',
   description: 'Transform your accountancy practice with AI-powered tools, client handover, compliance, and more. Join the future of accountancy today.',
-  keywords: 'accountancy, ai, oracle ai, accounting automation, client portal, insights',
+  keywords: 'accountancy, ai, oracle ai, accountancy automation, client portal, insights',
 };
+
+// Constants for external URLs
+const DASHBOARD_URL = 'https://app.oracleai.co.uk/accountancy/dashboard';
+const AUTH_URL = 'https://app.oracleai.co.uk/accountancy/auth'; // Direct link to auth page
 
 export default function AccountancyLandingPage() {
   return (
@@ -27,7 +31,7 @@ export default function AccountancyLandingPage() {
           <div className="flex items-center gap-6">
             <Link href="/" className="text-purple-200 hover:text-yellow-400 transition-colors">Main Portal</Link>
             <a
-              href="https://app.oracleai.co.uk/accountancy/dashboard"
+              href={DASHBOARD_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-semibold hover:from-purple-700 hover:to-purple-800 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -35,7 +39,7 @@ export default function AccountancyLandingPage() {
               Go to Dashboard
             </a>
             <a
-              href="https://app.oracleai.co.uk/accountancy/auth"
+              href={AUTH_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-full font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -65,12 +69,12 @@ export default function AccountancyLandingPage() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
               <a
-                href="https://app.oracleai.co.uk/accountancy/auth"
+                href={AUTH_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-xl font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                Take Free Assessment <FaArrowRight className="w-5 h-5" />
+                Start Your Free Assessment <FaArrowRight className="w-5 h-5" />
               </a>
               <a
                 href="#demo"
