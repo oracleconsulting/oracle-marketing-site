@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, PieChart, Briefcase, Target, Shield, Brain, Users, Scale, Lightbulb, Filter } from 'lucide-react';
+import { TrendingUp, PieChart, Briefcase, Target, Brain, Users, Scale, Filter } from 'lucide-react';
 import Link from 'next/link';
 
 const MeetTheBoard = () => {
@@ -203,7 +203,7 @@ const MeetTheBoard = () => {
               Select the advisors that match your business needs and start getting insights that transform your decision-making.
             </p>
             <Link
-              to="/build-your-board"
+              href="/build-your-board"
               className="inline-block px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all text-lg"
             >
               Build Your Custom Board

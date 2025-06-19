@@ -2,11 +2,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Brain, MessageSquare, Calendar, TrendingUp } from 'lucide-react';
-import Link from 'next/link';
 
 export default function Community() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showEmailCapture, setShowEmailCapture] = useState(false);
   
   // Navigation items
   const navItems = [

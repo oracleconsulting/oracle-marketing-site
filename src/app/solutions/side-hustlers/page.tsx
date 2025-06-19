@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, Target, TrendingUp, Zap, DollarSign, ArrowRight, CheckCircle, Calendar, BarChart3, Menu, X, Brain } from 'lucide-react';
+import { Clock, Target, Zap, ArrowRight, CheckCircle, Calendar, BarChart3, Menu, X, Brain } from 'lucide-react';
 import Link from 'next/link';
 
 const SideHustlers = () => {
@@ -436,7 +436,7 @@ const SideHustlers = () => {
           </p>
 
           <Link
-            to="/auth"
+            href="/auth"
             className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-green-500/25 transition-all text-lg"
           >
             Start 5-Hour Assessment

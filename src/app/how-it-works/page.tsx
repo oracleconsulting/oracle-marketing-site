@@ -138,7 +138,7 @@ const HowItWorks = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link
-              to="/auth"
+              href="/auth"
               className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all"
             >
               Start Your Journey
@@ -271,7 +271,7 @@ const HowItWorks = () => {
             className="mt-16"
           >
             <Link
-              to="/auth"
+              href="/auth"
               className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all text-lg"
             >
               Ready to transform your business?

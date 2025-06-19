@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Zap, Users, Target, Crown, Sparkles } from 'lucide-react';
+import { Check, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const PricingPage = () => {
@@ -137,7 +137,7 @@ const PricingPage = () => {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto"
         >
-          {tiers.map((tier, index) => (
+          {tiers.map((tier) => (
             <motion.div
               key={tier.name}
               variants={cardVariants}
