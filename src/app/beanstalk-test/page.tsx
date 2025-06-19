@@ -6,7 +6,6 @@ import {
   ArrowRight, 
   ChevronLeft,
   Target, 
-  CheckCircle, 
   Rocket, 
   Mountain,
   Building2, 

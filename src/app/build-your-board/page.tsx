@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, PieChart, Target, Briefcase, Brain, Shield, Users, Scale, Calculator, ArrowRight } from 'lucide-react';
+import { TrendingUp, PieChart, Target, Briefcase, Brain, Calculator, ArrowRight } from 'lucide-react';
 
 const BuildYourBoard = () => {
   const [selectedIndustry, setSelectedIndustry] = useState('');
