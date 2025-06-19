@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaStar, FaBullseye, FaUsers, FaBookOpen, FaShieldAlt, FaArrowRight, FaCheckCircle, FaChartLine } from 'react-icons/fa';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function AccountancyLandingPage() {
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <a href="/" className="text-purple-200 hover:text-yellow-400 transition-colors">Main Portal</a>
+            <Link href="/" className="text-purple-200 hover:text-yellow-400 transition-colors">Main Portal</Link>
             <a
               href="https://app.oracleai.co.uk/accountancy/dashboard"
               target="_blank"
