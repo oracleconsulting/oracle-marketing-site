@@ -20,14 +20,17 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Install serve globally
-RUN npm install -g serve
+# Copy package files for production dependencies
+COPY package*.json ./
+
+# Install only production dependencies
+RUN npm ci --only=production
 
 # Copy built files from build stage
 COPY --from=build /app/dist ./dist
 
-# Expose port
+# Expose port (will be overridden by Railway)
 EXPOSE 3000
 
-# Start the server
-CMD ["serve", "-s", "dist", "-l", "3000"] 
+# Start the server using npm start
+CMD ["npm", "start"] 
