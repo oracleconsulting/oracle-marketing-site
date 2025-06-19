@@ -7,6 +7,7 @@ import {
   FaCalendar, FaChartBar, FaTrophy, FaPlayCircle
 } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -72,21 +73,23 @@ export default function Home() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className="text-gray-600 hover:text-purple-600 transition-colors"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
-              <motion.button
-                className="px-6 py-2 bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 rounded-lg text-white font-medium shadow-md"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get Your Free Roadmap
-              </motion.button>
+              <Link href="/auth">
+                <motion.button
+                  className="px-6 py-2 bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 rounded-lg text-white font-medium shadow-md"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Get Your Free Roadmap
+                </motion.button>
+              </Link>
             </div>
             
             {/* Mobile Menu Button */}
@@ -104,18 +107,20 @@ export default function Home() {
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
             <div className="px-6 py-4 space-y-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className="block text-gray-600 hover:text-purple-600 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg text-white font-medium">
-                Get Your Free Roadmap
-              </button>
+              <Link href="/auth">
+                <button className="w-full px-6 py-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg text-white font-medium">
+                  Get Your Free Roadmap
+                </button>
+              </Link>
             </div>
           </div>
         )}
@@ -144,14 +149,16 @@ export default function Home() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 rounded-xl text-white font-medium shadow-lg flex items-center justify-center gap-2"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                See if Oracle fits
-                <FaArrowRight className="w-5 h-5" />
-              </motion.button>
+              <Link href="/auth">
+                <motion.button
+                  className="px-8 py-4 bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 rounded-xl text-white font-medium shadow-lg flex items-center justify-center gap-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  See if Oracle fits
+                  <FaArrowRight className="w-5 h-5" />
+                </motion.button>
+              </Link>
               <motion.button
                 className="px-8 py-4 bg-white/80 backdrop-blur-sm border-2 border-purple-400 rounded-xl text-purple-600 font-medium shadow-lg flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05 }}

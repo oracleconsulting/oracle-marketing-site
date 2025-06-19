@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Brain, MessageSquare, Calendar, ExternalLink, TrendingUp } from 'lucide-react';
+import { Menu, X, Brain, MessageSquare, Calendar, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Community() {
