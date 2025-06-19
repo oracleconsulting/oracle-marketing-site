@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 };
 
 // Constants for external URLs
-const DASHBOARD_URL = 'https://app.oracleai.co.uk/accountancy/dashboard';
-const AUTH_URL = 'https://app.oracleai.co.uk/accountancy/auth'; // Direct link to auth page
+const DASHBOARD_URL = 'https://oracle-method-portal-production.up.railway.app/accountancy/dashboard';
+const AUTH_URL = 'https://oracle-method-portal-production.up.railway.app/accountancy/auth'; // Direct link to auth page
 
 export default function AccountancyLandingPage() {
   return (
