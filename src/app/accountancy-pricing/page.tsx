@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Calculator, TrendingUp, Clock, Shield, Users } from 'lucide-react';
+import { Check, Calculator, TrendingUp, Clock, Shield, Users, Zap, BarChart3, Briefcase, GraduationCap, Plus } from 'lucide-react';
 
 const AccountancyPricing = () => {
   // Calculator state
@@ -50,7 +50,7 @@ const AccountancyPricing = () => {
       const totalBenefit = timeSavingsValue + advisoryIncrease + riskReduction + efficiencyGains;
 
       // Net ROI
-      const annualCost = 349 * 12; // Silver tier
+      const annualCost = 99 * 12; // Professional tier
       const netROI = totalBenefit - annualCost;
       const roiPercent = annualCost > 0 ? Math.round((netROI / annualCost) * 100) : 0;
       const paybackMonths = totalBenefit > 0 ? Math.round(annualCost / (totalBenefit / 12)) : 0;
@@ -73,60 +73,105 @@ const AccountancyPricing = () => {
 
   const pricingTiers = [
     {
-      name: 'Bronze',
-      title: 'Foundation',
-      price: '£149',
-      period: '/month',
-      description: 'Perfect for firms starting their advisory journey',
+      name: 'Free',
+      title: 'Get Started',
+      price: '£0',
+      period: 'forever',
+      description: 'Perfect for exploring PRAXIS capabilities',
       features: [
-        'Advisory Readiness Assessment',
-        'AI Advisory Coach (5 hours/month)',
-        'CPD Tracker & Compliance Alerts',
-        '5 Advisory Project Templates',
-        'Community Access',
-        'Email Support'
+        'Up to 3 team members',
+        'Basic KPI tracking',
+        'Client portal access',
+        'Email support',
+        'Community access',
+        'Basic compliance calendar',
+        'Limited advisory templates'
       ],
-      buttonText: 'Start Free Trial',
-      buttonStyle: 'border border-amber-600/50 text-amber-600 hover:bg-amber-600/10',
+      buttonText: 'Start Free',
+      buttonStyle: 'border border-gray-600 text-gray-300 hover:bg-gray-800',
       popular: false
     },
     {
-      name: 'Silver',
-      title: 'Professional',
-      price: '£349',
+      name: 'Professional',
+      title: 'Scale Your Practice',
+      price: '£99',
       period: '/month',
-      description: 'Most popular for growing advisory practices',
+      annualPrice: '£950',
+      annualSavings: 'Save £238',
+      description: 'Everything you need to transform your practice',
       features: [
-        'Everything in Bronze',
-        'Professional Standards Complaint System',
-        'Unlimited AI Coach Access',
-        'Team Training Hub (5 users)',
-        'Client Proposal Generator',
-        'Advanced Analytics Dashboard',
-        'Priority Support'
+        'Everything in Free',
+        'Up to 20 team members',
+        'Unlimited clients',
+        'Advanced KPI analytics',
+        'AI Advisory Assistant',
+        'Automated compliance tracking',
+        'Priority support',
+        'Custom branding',
+        'API access'
       ],
-      buttonText: 'Start Free Trial',
+      buttonText: 'Start 14-Day Trial',
       buttonStyle: 'bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-semibold hover:shadow-lg hover:shadow-amber-500/25',
       popular: true
     },
     {
-      name: 'Gold',
-      title: 'Enterprise',
-      price: '£649',
-      period: '/month',
-      description: 'Complete solution for established firms',
+      name: 'Enterprise',
+      title: 'Multi-Practice',
+      price: 'Custom',
+      period: '',
+      description: 'For large firms and groups',
       features: [
-        'Everything in Silver',
-        'White-label Options',
-        'Unlimited Team Members',
-        'API Access',
-        'Custom Integrations',
-        'Dedicated Success Manager',
-        'Custom Training Programs'
+        'Everything in Professional',
+        'Unlimited team members',
+        'Multi-practice management',
+        'Advanced security features',
+        'Custom integrations',
+        'Dedicated success manager',
+        'SLA guarantees',
+        'On-premise deployment option',
+        'Custom training programs'
       ],
       buttonText: 'Contact Sales',
       buttonStyle: 'border border-yellow-600/50 text-yellow-600 hover:bg-yellow-600/10',
       popular: false
+    }
+  ];
+
+  const boltOns = [
+    {
+      icon: <Zap className="w-6 h-6" />,
+      name: 'AI Advisory Power Pack',
+      description: 'Advanced AI capabilities for complex advisory scenarios',
+      price: '£49/month',
+      features: ['Unlimited AI consultations', 'Custom model training', 'Priority processing']
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      name: 'Compliance Guardian',
+      description: 'Enhanced compliance monitoring and reporting',
+      price: '£29/month',
+      features: ['Real-time alerts', 'Regulatory updates', 'Audit trail reports']
+    },
+    {
+      icon: <BarChart3 className="w-6 h-6" />,
+      name: 'Advanced Analytics',
+      description: 'Deep insights into practice performance',
+      price: '£39/month',
+      features: ['Custom dashboards', 'Predictive analytics', 'Benchmarking tools']
+    },
+    {
+      icon: <Briefcase className="w-6 h-6" />,
+      name: 'Partner Portal',
+      description: 'White-label client collaboration platform',
+      price: '£59/month',
+      features: ['Custom domain', 'Client app', 'Advanced permissions']
+    },
+    {
+      icon: <GraduationCap className="w-6 h-6" />,
+      name: 'Training Academy',
+      description: 'Comprehensive team development program',
+      price: '£79/month',
+      features: ['CPD tracking', 'Custom courses', 'Certification programs']
     }
   ];
 
@@ -143,11 +188,15 @@ const AccountancyPricing = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/20 to-yellow-600/20 px-4 py-2 rounded-full mb-4">
+            <span className="text-amber-500 font-semibold">PRAXIS</span>
+            <span className="text-gray-400">Practice Transformation Platform</span>
+          </div>
           <h1 className="text-responsive-3xl font-bold text-white mb-4">
-            Transform Your Practice in 90 Days
+            Start Free, Scale When Ready
           </h1>
           <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto mb-2">
-            Join 500+ UK accounting firms already building advisory excellence
+            Join 500+ UK accounting firms building advisory excellence with our freemium model
           </p>
           <div className="inline-flex items-center gap-2 text-amber-500 text-sm">
             <Shield className="w-4 h-4" />
@@ -185,6 +234,12 @@ const AccountancyPricing = () => {
                 <div className="mb-6">
                   <span className="text-3xl md:text-4xl font-bold text-white">{tier.price}</span>
                   <span className="text-gray-400">{tier.period}</span>
+                  {tier.annualPrice && (
+                    <div className="mt-2">
+                      <p className="text-sm text-gray-400">or {tier.annualPrice}/year</p>
+                      <p className="text-xs text-green-500">{tier.annualSavings}</p>
+                    </div>
+                  )}
                 </div>
 
                 <ul className="space-y-3 mb-8">
@@ -204,6 +259,45 @@ const AccountancyPricing = () => {
           ))}
         </motion.div>
 
+        {/* Bolt-ons Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="mb-24"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-responsive-2xl font-bold text-white mb-4">
+              Enhance Your Experience with Bolt-ons
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Add powerful features to your subscription as your practice grows
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {boltOns.map((boltOn, idx) => (
+              <motion.div
+                key={idx}
+                className="bg-gray-900/80 backdrop-blur border border-gray-800 rounded-xl p-6 hover:border-amber-500/50 transition-all"
+                whileHover={{ y: -5 }}
+              >
+                <div className="text-amber-500 mb-4">{boltOn.icon}</div>
+                <h3 className="text-lg font-semibold text-white mb-2">{boltOn.name}</h3>
+                <p className="text-gray-400 text-sm mb-4">{boltOn.description}</p>
+                <p className="text-amber-500 font-semibold mb-4">{boltOn.price}</p>
+                <ul className="space-y-2">
+                  {boltOn.features.map((feature, fidx) => (
+                    <li key={fidx} className="flex items-start gap-2">
+                      <Plus className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-400 text-xs">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* ROI Calculator */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -219,7 +313,7 @@ const AccountancyPricing = () => {
                 </h2>
               </div>
               <p className="text-gray-400">
-                See how much Oracle Method can transform your practice profitability
+                See how PRAXIS can transform your practice profitability
               </p>
             </div>
 
@@ -345,8 +439,8 @@ const AccountancyPricing = () => {
               </div>
               
               <div className="flex justify-between items-center text-sm">
-                <span className="text-gray-400">Less: Oracle Method Investment (Silver)</span>
-                <span className="text-gray-400">-£{(349 * 12).toLocaleString()}/year</span>
+                <span className="text-gray-400">Less: PRAXIS Investment (Professional)</span>
+                <span className="text-gray-400">-£{(99 * 12).toLocaleString()}/year</span>
               </div>
               
               <div className="border-t border-amber-500/50 pt-3 flex justify-between items-center">
@@ -358,17 +452,17 @@ const AccountancyPricing = () => {
             {/* CTA */}
             <div className="text-center">
               <p className="text-gray-400 mb-6 text-sm">
-                *Based on average results from 500+ UK accounting firms using Oracle Method
+                *Based on average results from 500+ UK accounting firms using PRAXIS
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-touch bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-semibold rounded-lg shadow-lg"
               >
-                Start Your 14-Day Free Trial
+                Start Free Today
               </motion.button>
               <p className="text-gray-500 text-xs mt-3">
-                No credit card required • Cancel anytime • Setup in under 10 minutes
+                No credit card required • Free forever tier • Setup in under 5 minutes
               </p>
             </div>
           </div>
