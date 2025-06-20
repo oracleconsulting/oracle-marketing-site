@@ -27,14 +27,18 @@
  * - Backend: oracle_api_server (Python/FastAPI)
  */
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   // Enable static exports for better performance
-  output: 'standalone',
+  output: 'export',
+  trailingSlash: true,
   
   // Image optimization
   images: {
     domains: ['oracleconsulting.ai'],
     formats: ['image/webp', 'image/avif'],
+    unoptimized: true,
   },
   
   // Enable experimental features for better performance
@@ -84,31 +88,31 @@ const nextConfig = {
       // App redirects to method portal
       {
         source: '/auth',
-        destination: process.env.NODE_ENV === 'production' 
-          ? 'https://app.oracleconsulting.ai/auth'
+        destination: isProduction
+          ? 'https://oracle-method-portal-production.up.railway.app/auth'
           : 'http://localhost:5173/auth',
-        permanent: false,
+        permanent: true,
       },
       {
-        source: '/dashboard',
-        destination: process.env.NODE_ENV === 'production'
-          ? 'https://app.oracleconsulting.ai/dashboard'
-          : 'http://localhost:5173/dashboard',
-        permanent: false,
+        source: '/dashboard/:path*',
+        destination: isProduction
+          ? 'https://oracle-method-portal-production.up.railway.app/dashboard/:path*'
+          : 'http://localhost:5173/dashboard/:path*',
+        permanent: true,
       },
       {
-        source: '/accountancy/:path*',
-        destination: process.env.NODE_ENV === 'production'
-          ? 'https://app.oracleconsulting.ai/accountancy/:path*'
-          : 'http://localhost:5173/accountancy/:path*',
-        permanent: false,
+        source: '/accountancy/auth',
+        destination: isProduction
+          ? 'https://oracle-method-portal-production.up.railway.app/accountancy/auth'
+          : 'http://localhost:5173/accountancy/auth',
+        permanent: true,
       },
       {
         source: '/assessment/:path*',
-        destination: process.env.NODE_ENV === 'production'
-          ? 'https://app.oracleconsulting.ai/assessment/:path*'
+        destination: isProduction
+          ? 'https://oracle-method-portal-production.up.railway.app/assessment/:path*'
           : 'http://localhost:5173/assessment/:path*',
-        permanent: false,
+        permanent: true,
       },
     ]
   },
