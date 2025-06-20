@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { 
   ArrowRight, 
   Sparkles, 
@@ -14,8 +14,7 @@ import {
 } from 'lucide-react';
 
 export default function AccountancyLanding() {
-  const { user } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -28,13 +27,8 @@ export default function AccountancyLanding() {
   }, []);
 
   const handleTakeAssessment = () => {
-    if (user) {
-      // If user is already logged in, go directly to dashboard
-      navigate('/accountancy/dashboard');
-    } else {
-      // If not logged in, go to accountancy-specific auth page
-      navigate('/accountancy/auth');
-    }
+    // Always route to auth for assessment
+    router.push('/accountancy/auth');
   };
 
   return (
@@ -76,24 +70,15 @@ export default function AccountancyLanding() {
           </div>
           
           <div className="flex items-center gap-6">
-            <Link to="/" className="text-purple-200 hover:text-yellow-400 transition-colors">
+            <Link href="/" className="text-purple-200 hover:text-yellow-400 transition-colors">
               Main Portal
             </Link>
-            {user ? (
-              <button
-                onClick={() => navigate('/accountancy/dashboard')}
-                className="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-semibold hover:from-purple-700 hover:to-purple-800 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Go to Dashboard
-              </button>
-            ) : (
-              <button
-                onClick={handleTakeAssessment}
-                className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-full font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Take Free Assessment
-              </button>
-            )}
+            <button
+              onClick={handleTakeAssessment}
+              className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-full font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Take Free Assessment
+            </button>
           </div>
         </div>
       </nav>
