@@ -27,13 +27,13 @@ export default function Home() {
     setMousePosition({ x: e.clientX, y: e.clientY })
   }
   
-  // Navigation items
+  // Navigation items - Updated to use internal link for Accountancy Portal
   const navItems = [
-    { label: 'The Beanstalk Test', href: '/beanstalk-test' },
-    { label: '365 Method', href: '/365-method' },
-    { label: 'AI Board', href: '/ai-board' },
-    { label: 'Accountancy Portal', href: '/accountancy' },
-    { label: 'Pricing', href: '/pricing' }
+    { label: 'The Beanstalk Test', href: '/beanstalk-test', isExternal: false },
+    { label: '365 Method', href: '/365-method', isExternal: false },
+    { label: 'AI Board', href: '/ai-board', isExternal: false },
+    { label: 'Accountancy Portal', href: '/accountancy', isExternal: false },
+    { label: 'Pricing', href: '/pricing', isExternal: false }
   ]
 
   return (
@@ -264,6 +264,190 @@ export default function Home() {
               &ldquo;Rich is having money. Wealthy is having Tuesday afternoons free. 
               <span className="text-purple-600"> Which are you building?&rdquo;</span>
             </blockquote>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Solution Overview Section */}
+      <section className="py-20 px-6 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              Three steps to a life-first business
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Stop climbing someone else&apos;s beanstalk. Build your own path with our proven framework.
+            </p>
+          </motion.div>
+
+          {/* Three Pillars */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Beanstalk Test */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all"
+            >
+              <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-3xl">🌱</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">The Beanstalk Test™</h3>
+              <p className="text-gray-600 mb-6">
+                Jack&apos;s real wisdom wasn&apos;t climbing up. It was cutting it down. 
+                Find out if you&apos;re building wealth or just climbing higher.
+              </p>
+              <Link href="/beanstalk-test">
+                <motion.button
+                  className="text-green-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all"
+                  whileHover={{ x: 5 }}
+                >
+                  Take the free test <FaArrowRight />
+                </motion.button>
+              </Link>
+            </motion.div>
+
+            {/* 365 Method */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all"
+            >
+              <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-3xl">📅</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">The 365 Method™</h3>
+              <p className="text-gray-600 mb-6">
+                Nothing revolutionary. Everything helpful. A planning system that starts 
+                with your life, not your business. Simple enough to sketch on a beer mat.
+              </p>
+              <Link href="/365-method">
+                <motion.button
+                  className="text-purple-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all"
+                  whileHover={{ x: 5 }}
+                >
+                  Learn the method <FaArrowRight />
+                </motion.button>
+              </Link>
+            </motion.div>
+
+            {/* AI Board */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all"
+            >
+              <div className="w-16 h-16 bg-pink-100 rounded-xl flex items-center justify-center mb-6">
+                <FaBrain className="w-8 h-8 text-pink-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Your AI Board</h3>
+              <p className="text-gray-600 mb-6">
+                8 C-suite advisors who understand that Tuesday matters more than IPO. 
+                Available 24/7, no hallucinations, remembers everything.
+              </p>
+              <Link href="/ai-board">
+                <motion.button
+                  className="text-pink-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all"
+                  whileHover={{ x: 5 }}
+                >
+                  Meet your board <FaArrowRight />
+                </motion.button>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Section */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              Real founders. Real results. Real lives back.
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                quote: "First time in 3 years I made it to sports day. Worth every penny.",
+                author: "Sarah, E-commerce Founder",
+                metric: "£500k revenue on 35 hours/week"
+              },
+              {
+                quote: "My AI CFO found £10k in tax savings I'd missed for 2 years.",
+                author: "James, Agency Owner",
+                metric: "20% profit increase in 90 days"
+              },
+              {
+                quote: "Finally sleeping through the night. AI board handles the 2am panics.",
+                author: "Emma, SaaS Founder",
+                metric: "Prevented 3 critical mistakes"
+              }
+            ].map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-gray-50 rounded-2xl p-6"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} className="w-4 h-4 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">&ldquo;{testimonial.quote}&rdquo;</p>
+                <p className="font-semibold text-gray-800">{testimonial.author}</p>
+                <p className="text-sm text-purple-600">{testimonial.metric}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 px-6 bg-gradient-to-br from-purple-600 to-pink-600 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Ready to build a business that funds your life?
+            </h2>
+            <p className="text-xl mb-8 text-purple-100">
+              Start with our free assessment. Get your personalized roadmap in 15 minutes.
+            </p>
+            <a href={authUrl}>
+              <motion.button
+                className="px-8 py-4 bg-white text-purple-600 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Start Your Free Assessment
+              </motion.button>
+            </a>
+            <p className="mt-6 text-sm text-purple-200">
+              No credit card required • 30-day money-back guarantee • Cancel anytime
+            </p>
           </motion.div>
         </div>
       </section>
