@@ -1,11 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
+import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 export default function Landing() {
-  const { user } = useAuth();
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900">
       {/* Navigation */}
@@ -13,21 +10,12 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="text-white text-2xl font-bold">Oracle Method</div>
           <div className="space-x-4">
-            {user ? (
-              <Link
-                to="/dashboard"
-                className="px-6 py-2 bg-white text-purple-900 rounded-lg font-semibold hover:bg-purple-50 transition"
-              >
-                Go to Dashboard
-              </Link>
-            ) : (
-              <Link
-                to="/auth"
-                className="px-6 py-2 bg-white text-purple-900 rounded-lg font-semibold hover:bg-purple-50 transition"
-              >
-                Sign In
-              </Link>
-            )}
+            <Link
+              href="/auth"
+              className="px-6 py-2 bg-white text-purple-900 rounded-lg font-semibold hover:bg-purple-50 transition"
+            >
+              Sign In
+            </Link>
           </div>
         </div>
       </nav>
@@ -47,7 +35,7 @@ export default function Landing() {
             </p>
             <div className="flex justify-center gap-6">
               <Link
-                to={user ? "/dashboard" : "/auth"}
+                href="/auth"
                 className="px-8 py-4 bg-white text-purple-900 rounded-xl font-semibold hover:bg-purple-50 transition flex items-center gap-2"
               >
                 Get Started <ArrowRight className="w-5 h-5" />

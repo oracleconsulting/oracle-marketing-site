@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Zap, Check, Plus, Clock } from 'lucide-react';
+import { ArrowRight, Zap, Plus, Clock } from 'lucide-react';
 
 const IntegrationsGrid = () => {
   const [hoveredIntegration, setHoveredIntegration] = useState<string | null>(null);

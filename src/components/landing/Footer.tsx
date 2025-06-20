@@ -1,10 +1,20 @@
-
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Linkedin, Twitter } from 'lucide-react';
 
+interface FooterLink {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
 const Footer = () => {
-  const footerSections = {
+  const footerSections: Record<string, FooterSection> = {
     product: {
       title: 'Product',
       links: [
@@ -70,7 +80,7 @@ const Footer = () => {
                       </a>
                     ) : (
                       <Link
-                        to={link.href}
+                        href={link.href}
                         className="text-gray-400 hover:text-white transition-colors duration-200 block"
                       >
                         {link.label}
