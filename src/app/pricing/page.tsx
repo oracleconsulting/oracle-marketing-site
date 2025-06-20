@@ -1,11 +1,9 @@
 'use client'
-'use client'
 
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, Sparkles } from 'lucide-react';
 import Link from 'next/link';
-import { FaCheck, FaTimes, FaStar, FaArrowRight, FaBrain } from 'react-icons/fa';
 import { getAuthUrl } from '../../config/urls';
 
 const PricingPage = () => {

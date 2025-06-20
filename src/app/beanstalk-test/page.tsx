@@ -2,21 +2,19 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Brain, 
-  ArrowRight, 
-  ChevronLeft,
-  Target, 
-  Rocket, 
-  Mountain,
-  Building2, 
   TreePine, 
-  Coins, 
   Cloud, 
-  Sprout, 
-  Axe
+  ChevronLeft,
+  TrendingUp,
+  Heart,
+  Coins,
+  Brain,
+  Axe,
+  Sprout,
+  ArrowRight,
+  Target,
+  Rocket
 } from 'lucide-react';
-import Link from 'next/link';
-import { FaBrain, FaStar, FaBullseye, FaUsers, FaBookOpen, FaShieldAlt, FaArrowRight, FaCheckCircle, FaChartLine } from 'react-icons/fa';
 import { getAuthUrl } from '../../config/urls';
 
 const BeanstalkTestPage = () => {
@@ -47,7 +45,7 @@ const BeanstalkTestPage = () => {
       id: 'momentum',
       title: 'The Momentum Trap',
       question: 'Are you climbing higher because you want to or because you can\'t stop?',
-      icon: Mountain,
+      icon: TrendingUp,
       options: [
         { value: 1, label: "I literally don't know how to stop", points: 3 },
         { value: 2, label: "Stopping feels like failure", points: 2 },
@@ -71,7 +69,7 @@ const BeanstalkTestPage = () => {
       id: 'giant',
       title: 'The Giant',
       question: 'What\'s demanding more and more from you?',
-      icon: Building2,
+      icon: Heart,
       options: [
         { value: 1, label: "Everything. I'm being consumed.", points: 3 },
         { value: 2, label: "Investors/growth expectations", points: 2 },

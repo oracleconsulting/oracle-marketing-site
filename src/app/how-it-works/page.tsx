@@ -3,9 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Clock, Target, Users, BarChart3, Zap, CheckCircle } from 'lucide-react';
-import Link from 'next/link';
 import { getAuthUrl } from '../../config/urls';
-import { FaBrain, FaChartLine, FaUsers, FaRocket, FaArrowRight, FaCheckCircle, FaShieldAlt, FaStar } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 
 const HowItWorks = () => {
   const { scrollY } = useScroll();
