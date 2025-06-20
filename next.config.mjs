@@ -6,8 +6,12 @@ const nextConfig = {
   },
   
   async redirects() {
-    // Use environment variable or default to production URL
-    const methodPortalUrl = process.env.NEXT_PUBLIC_METHOD_PORTAL_URL || 'https://oracle-method-portal-production.up.railway.app';
+    // In production on Railway, we'll use the production URL
+    // In development, we'll use localhost
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    const methodPortalUrl = isDevelopment 
+      ? 'http://localhost:5173'
+      : 'https://oracle-method-portal-production.up.railway.app';
     
     return [
       {

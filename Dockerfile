@@ -20,17 +20,19 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy package files for production dependencies
+# Copy package files
 COPY package*.json ./
 
 # Install only production dependencies
 RUN npm ci --only=production
 
-# Copy built files from build stage
-COPY --from=build /app/dist ./dist
+# Copy built application from build stage
+COPY --from=build /app/.next ./.next
+COPY --from=build /app/public ./public
+COPY --from=build /app/next.config.mjs ./
 
-# Expose port (will be overridden by Railway)
+# Expose port (Railway will override this)
 EXPOSE 3000
 
-# Start the server using npm start
+# Start the Next.js server
 CMD ["npm", "start"] 
