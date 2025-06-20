@@ -8,10 +8,14 @@ import {
 } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { getAuthUrl } from '../config/urls'
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  
+  // Get the auth URL from config
+  const authUrl = getAuthUrl();
   
   useEffect(() => {
     const handleScroll = () => {}
@@ -81,7 +85,7 @@ export default function Home() {
                   {item.label}
                 </Link>
               ))}
-              <Link href="/auth">
+              <a href={authUrl}>
                 <motion.button
                   className="px-6 py-2 bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 rounded-lg text-white font-medium shadow-md"
                   whileHover={{ scale: 1.05 }}
@@ -89,7 +93,7 @@ export default function Home() {
                 >
                   Get Your Free Roadmap
                 </motion.button>
-              </Link>
+              </a>
             </div>
             
             {/* Mobile Menu Button */}
@@ -116,11 +120,11 @@ export default function Home() {
                   {item.label}
                 </Link>
               ))}
-              <Link href="/auth">
+              <a href={authUrl}>
                 <button className="w-full px-6 py-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg text-white font-medium">
                   Get Your Free Roadmap
                 </button>
-              </Link>
+              </a>
             </div>
           </div>
         )}
@@ -149,7 +153,7 @@ export default function Home() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/auth">
+              <a href={authUrl}>
                 <motion.button
                   className="px-8 py-4 bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 rounded-xl text-white font-medium shadow-lg flex items-center justify-center gap-2"
                   whileHover={{ scale: 1.05 }}
@@ -158,7 +162,7 @@ export default function Home() {
                   See if Oracle fits
                   <FaArrowRight className="w-5 h-5" />
                 </motion.button>
-              </Link>
+              </a>
               <motion.button
                 className="px-8 py-4 bg-white/80 backdrop-blur-sm border-2 border-purple-400 rounded-xl text-purple-600 font-medium shadow-lg flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05 }}

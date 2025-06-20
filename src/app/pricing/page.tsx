@@ -5,6 +5,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { FaCheck, FaTimes, FaStar, FaArrowRight, FaBrain } from 'react-icons/fa';
+import { getAuthUrl } from '../../config/urls';
 
 const PricingPage = () => {
   const tiers = [
@@ -108,6 +110,8 @@ const PricingPage = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
   };
+
+  const authUrl = getAuthUrl();
 
   return (
     <div className="min-h-screen bg-black pt-20 md:pt-24">
@@ -242,12 +246,12 @@ const PricingPage = () => {
         >
           <h2 className="text-2xl font-bold text-white mb-4">Ready to transform your business?</h2>
           <p className="text-gray-400 mb-8">Join thousands of founders who've already discovered the power of AI-driven insights.</p>
-          <Link
-            href="/auth"
+          <a
+            href={authUrl}
             className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-purple-500/25 transition-all"
           >
             Start Your Free Trial
-          </Link>
+          </a>
         </motion.div>
       </div>
     </div>

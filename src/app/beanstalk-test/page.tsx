@@ -15,6 +15,9 @@ import {
   Sprout, 
   Axe
 } from 'lucide-react';
+import Link from 'next/link';
+import { FaBrain, FaStar, FaBullseye, FaUsers, FaBookOpen, FaShieldAlt, FaArrowRight, FaCheckCircle, FaChartLine } from 'react-icons/fa';
+import { getAuthUrl } from '../../config/urls';
 
 const BeanstalkTestPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -163,6 +166,8 @@ const BeanstalkTestPage = () => {
   
   const currentQ = questions[currentQuestion];
   const QuestionIcon = currentQ ? currentQ.icon : TreePine;
+  
+  const authUrl = getAuthUrl();
   
   return (
     <div 
@@ -394,7 +399,7 @@ const BeanstalkTestPage = () => {
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <motion.a
-                      href="/auth"
+                      href={authUrl}
                       className={`px-8 py-4 rounded-xl text-white font-medium shadow-lg ${
                         showResults.type === 'beanstalk' ? 'bg-gradient-to-r from-red-400 to-red-500' :
                         showResults.type === 'climbing' ? 'bg-gradient-to-r from-orange-400 to-orange-500' :

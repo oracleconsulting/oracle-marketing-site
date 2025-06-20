@@ -4,10 +4,13 @@ import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Clock, Target, Users, BarChart3, Zap, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
+import { getAuthUrl } from '../../config/urls';
+import { FaBrain, FaChartLine, FaUsers, FaRocket, FaArrowRight, FaCheckCircle, FaShieldAlt, FaStar } from 'react-icons/fa';
 
 const HowItWorks = () => {
   const { scrollY } = useScroll();
   const [scrollProgress, setScrollProgress] = useState(0);
+  const authUrl = getAuthUrl();
 
   const parallaxY = useTransform(scrollY, [0, 1000], [0, -100]);
   const headerOpacity = useTransform(scrollY, [0, 300], [1, 0]);
@@ -137,12 +140,12 @@ const HowItWorks = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link
-              href="/auth"
-              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all"
+            <a
+              href={authUrl}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
-              Start Your Journey
-            </Link>
+              Start Your Free Assessment <FaArrowRight className="w-5 h-5" />
+            </a>
             <button className="px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-purple-500 hover:text-purple-600 transition-all">
               Watch Demo
             </button>
@@ -270,13 +273,12 @@ const HowItWorks = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-16"
           >
-            <Link
-              href="/auth"
-              className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all text-lg"
+            <a
+              href={authUrl}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
-              Ready to transform your business?
-              <ArrowRight className="w-6 h-6" />
-            </Link>
+              Get Started Today <FaArrowRight className="w-5 h-5" />
+            </a>
           </motion.div>
         </div>
       </motion.section>

@@ -3,8 +3,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaStar, FaBullseye, FaUsers, FaBookOpen, FaShieldAlt, FaArrowRight, FaCheckCircle, FaChartLine } from 'react-icons/fa';
+import { getAccountancyAuthUrl, getAccountancyDashboardUrl } from '../../config/urls';
 
 export default function AccountancyLandingPage() {
+  // Get URLs from config
+  const accountancyAuthUrl = getAccountancyAuthUrl();
+  const accountancyDashboardUrl = getAccountancyDashboardUrl();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-violet-900 relative overflow-hidden">
       {/* Navigation */}
@@ -21,18 +26,18 @@ export default function AccountancyLandingPage() {
           </div>
           <div className="flex items-center gap-6">
             <Link href="/" className="text-purple-200 hover:text-yellow-400 transition-colors">Main Portal</Link>
-            <Link
-              href="/accountancy/dashboard"
+            <a
+              href={accountancyDashboardUrl}
               className="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-semibold hover:from-purple-700 hover:to-purple-800 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Go to Dashboard
-            </Link>
-            <Link
-              href="/accountancy/auth"
+            </a>
+            <a
+              href={accountancyAuthUrl}
               className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-full font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Take Free Assessment
-            </Link>
+            </a>
           </div>
         </div>
       </nav>
@@ -55,12 +60,12 @@ export default function AccountancyLandingPage() {
               Streamline operations, enhance client relationships, and drive growth with our comprehensive suite of AI-powered tools designed specifically for modern accountancy practices.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-              <Link
-                href="/accountancy/auth"
+              <a
+                href={accountancyAuthUrl}
                 className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-xl font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 Start Your Free Assessment <FaArrowRight className="w-5 h-5" />
-              </Link>
+              </a>
               <a
                 href="#demo"
                 className="px-8 py-4 border-2 border-purple-400 text-purple-400 rounded-xl font-semibold hover:bg-purple-400 hover:text-slate-900 transition-all duration-300"
