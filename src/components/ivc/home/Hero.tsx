@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import Button from '@/components/ivc/shared/Button'
 import TrustIndicators from './TrustIndicators'
 import FloatingElements from './FloatingElements'
