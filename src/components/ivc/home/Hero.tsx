@@ -31,7 +31,7 @@ export default function Hero() {
         </h2>
         
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-          We don't hide behind jargon or drown you in reports. 
+          We don&apos;t hide behind jargon or drown you in reports. 
           We protect your business and help you build something real.
         </p>
         
