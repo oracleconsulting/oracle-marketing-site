@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Phone, Mail, Calendar, MapPin, Clock } from 'lucide-react'
+import { Phone, Mail, Calendar, Clock } from 'lucide-react'
 import Button from '@/components/ivc/shared/Button'
 import ContactForm from '@/components/ivc/shared/ContactForm'
 import { BreadcrumbSchema } from '@/components/ivc/seo/StructuredData'
