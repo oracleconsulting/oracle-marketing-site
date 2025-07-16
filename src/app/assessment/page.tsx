@@ -1,16 +1,13 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
 
-export default function AuthPage() {
-  const router = useRouter()
-
+export default function AssessmentPage() {
   useEffect(() => {
-    // Redirect to the method portal auth page
+    // Redirect to the method portal assessment page
     const methodPortalUrl = process.env.NODE_ENV === 'production'
-      ? 'https://oracle-method-portal-production.up.railway.app/auth'
-      : 'http://localhost:5173/auth'
+      ? 'https://oracle-method-portal-production.up.railway.app/assessment'
+      : 'http://localhost:5173/assessment'
     
     window.location.href = methodPortalUrl
   }, [])

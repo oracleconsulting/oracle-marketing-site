@@ -34,12 +34,12 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   
-  // Image optimization
+  // Disable image optimization for static export
   images: {
-    domains: ['oracleconsulting.ai'],
-    formats: ['image/webp', 'image/avif'],
     unoptimized: true,
   },
+  
+
   
   // Enable experimental features for better performance
   experimental: {
@@ -70,52 +70,7 @@ const nextConfig = {
     ]
   },
   
-  // Redirects for SEO and app routing
-  async redirects() {
-    return [
-      // SEO redirects
-      {
-        source: '/home',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/landing',
-        destination: '/',
-        permanent: true,
-      },
-      
-      // App redirects to method portal
-      {
-        source: '/auth',
-        destination: isProduction
-          ? 'https://oracle-method-portal-production.up.railway.app/auth'
-          : 'http://localhost:5173/auth',
-        permanent: true,
-      },
-      {
-        source: '/dashboard/:path*',
-        destination: isProduction
-          ? 'https://oracle-method-portal-production.up.railway.app/dashboard/:path*'
-          : 'http://localhost:5173/dashboard/:path*',
-        permanent: true,
-      },
-      {
-        source: '/accountancy/auth',
-        destination: isProduction
-          ? 'https://oracle-method-portal-production.up.railway.app/accountancy/auth'
-          : 'http://localhost:5173/accountancy/auth',
-        permanent: true,
-      },
-      {
-        source: '/assessment/:path*',
-        destination: isProduction
-          ? 'https://oracle-method-portal-production.up.railway.app/assessment/:path*'
-          : 'http://localhost:5173/assessment/:path*',
-        permanent: true,
-      },
-    ]
-  },
+
   
   // Environment variables
   env: {

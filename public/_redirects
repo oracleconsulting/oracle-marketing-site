@@ -1,1 +1,15 @@
+# Oracle Marketing Site Redirects
+# These redirects work with static exports
+
+# SEO redirects
+/home    /    301
+/landing    /    301
+
+# App redirects to method portal (handled by client-side redirects in pages)
+/auth    /auth/    301
+/dashboard    /dashboard/    301
+/accountancy/auth    /accountancy/auth/    301
+/assessment    /assessment/    301
+
+# Fallback for SPA
 /*    /index.html   200 
